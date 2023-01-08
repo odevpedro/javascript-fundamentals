@@ -1,5 +1,9 @@
 // Objects
 
+/*
+Objects in JavaScript are collections of key-value pairs that can represent real-world entities such as a person, a bank account, or a car. 
+Here is an example of a code with explanations of objects, properties, methods, and the this keyword*/
+
 // An object literal
 let person = {
     firstName: 'John',
@@ -60,6 +64,9 @@ console.log(person.address.state); // 'NY'
 
 // An object can have methods, which are functions that can perform actions or calculations
 
+
+
+// area of a rectangle
 let rectangle = {
     width: 10,
     height: 5,
