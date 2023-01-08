@@ -1,72 +1,100 @@
-// 'if' statements
+// Objects
 
-let x = 10;
+// An object literal
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    fullName: function() {
+        return this.firstName + ' ' + this.lastName;
+    }
+};
 
-if (x > 5) {
-    console.log('x is greater than 5');
+console.log(person.firstName); // 'John'
+console.log(person.lastName); // 'Doe'
+console.log(person.age); // 30
+console.log(person.fullName()); // 'John Doe'
+
+// A constructor function
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.fullName = function() {
+        return this.make + ' ' + this.model + ' (' + this.year + ')';
+    }
 }
 
-let y = 4;
+let car1 = new Car('Ford', 'Fiesta', 2018);
+let car2 = new Car('Toyota', 'Corolla', 2020);
 
-if (y > 5) {
-    console.log('y is greater than 5');
-} else {
-    console.log('y is not greater than 5');
-}
+console.log(car1.make); // 'Ford'
+console.log(car1.model); // 'Fiesta'
+console.log(car1.year); // 2018
+console.log(car1.fullName()); // 'Ford Fiesta (2018)'
+console.log(car2.make); // 'Toyota'
+console.log(car2.model); // 'Corolla'
+console.log(car2.year); // 2020
+console.log(car2.fullName()); // 'Toyota Corolla (2020)'
 
-let z = 4;
+// Properties
 
-if (z > 5) {
-    console.log('z is greater than 5');
-} else if (z > 3) {
-    console.log('z is greater than 3');
-} else {
-    console.log('z is not greater than 3');
-}
+// An object can have properties with primitive values or references to other objects
+let person = {
+    name: 'John',
+    age: 30,
+    address: {
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY'
+    }
+};
 
-// 'for' loops
+console.log(person.name); // 'John'
+console.log(person.age); // 30
+console.log(person.address.street); // '123 Main St'
+console.log(person.address.city); // 'New York'
+console.log(person.address.state); // 'NY'
 
-for (let i = 0; i < 5; i++) {
-    console.log(i);
-}
+// Methods
 
-// Output:
-// 0
-// 1
-// 2
-// 3
-// 4
+// An object can have methods, which are functions that can perform actions or calculations
 
-let names = ['John', 'Jane', 'Bob'];
-
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
-}
-
-// Output:
-// 'John'
-// 'Jane'
-// 'Bob'
-
-// 'while' loops
-
-let counter = 0;
-
-while (counter < 5) {
-    console.log(counter);
-    counter++;
-}
+let rectangle = {
+    width: 10,
+    height: 5,
+    calculateArea: function() {
+        return this.width * this.height;
+    }
+};
 
 
+console.log(rectangle.calculateArea()); // 50
 
+// An object with a method that converts Celsius to Fahrenheit
+let temperature = {
+    celsius: 0,
+    fahrenheit: function() {
+        return this.celsius * 9/5 + 32;
+    }
+};
 
-/**
-let password = '';
+console.log(temperature.fahrenheit()); // 32
 
+// An object with a method that calculates the total price of an order
+let order = {
+    items: [
+        { name: 'Product 1', price: 9.99 },
+        { name: 'Product 2', price: 19.99 },
+        { name: 'Product 3', price: 29.99 }
+    ],
+    calculateTotal: function() {
+        let total = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            total += this.items[i].price;
+        }
+        return total;
+    }
+};
 
-while (password !== 'password') {
-    password = prompt('Enter your password:');
-}
-
-console.log('Access granted');
- */
+console.log(order.calculateTotal()); // 59.97
