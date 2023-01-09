@@ -1,58 +1,40 @@
-function getData() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        var data = JSON.parse(xhr.responseText);
-        updatePage(data);
-      }
-    };
-    xhr.open("GET", "data.json", true);
-    xhr.send();
-  }
-  
-  function updatePage(data) {
-    var div = document.getElementById("data");
-    div.innerHTML = "";
-    for (var i = 0; i < data.length; i++) {
-      div.innerHTML += "<p>" + data[i].name + "</p>";
-    }
-  }
-  
-  setInterval(function() {
-    console.log("Hello");
-  }, 3000);
-  
-  setTimeout(function() {
-    console.log("Hello");
-  }, 3000);
-  
-  var newElement = document.createElement("p");
-  newElement.innerHTML = "Hello, World!";
-  document.body.appendChild(newElement);
-  
-  var button = document.getElementById("myButton");
-  button.addEventListener("click", function() {
-    console.log("Button clicked");
-  });
-  
+// 1. Changing the contents of an element:
 
-  /*
-  
-    The getData function is defined. This function is responsible for retrieving data from a JSON file.
-    A new XMLHttpRequest object is created and stored in the xhr variable.
-    A callback function is set up to be executed when the request finishes. 
-    This function checks if the request is complete (xhr.readyState == 4) and successful (xhr.status == 200). 
-    If both conditions are true, the JSON data is parsed and passed to the updatePage function.
-    
-    The request is opened and sent.
-    The updatePage function is defined. This function updates the page with the data passed to it.
-    The div element with the "data" id is retrieved.
-    The contents of the div are cleared.
-    A loop iterates through the data and adds a paragraph element for each item.
-    An interval is set up to log "Hello" to the console every 3 seconds.
-    A timeout is set up to log "Hello" to the console after 3 seconds.
-    A new paragraph element is created and its inner HTML is set to "Hello, World!".
-    The new element is appended to the body of the page.
-    The button element with the "myButton" id is retrieved.
-    A click event listener is set up for the button. When the button is clicked, it logs "Button clicked" to the console.
-  */ 
+// Get the element with the "myDiv" id
+var div = document.getElementById("myDiv");
+// Change the contents of the element
+div.innerHTML = "Hello, World!";
+
+// 2. Adding a new element to the page:
+
+// Create a new paragraph element
+var p = document.createElement("p");
+// Set the inner HTML of the element
+p.innerHTML = "This is a new paragraph.";
+// Append the element to the body of the page
+document.body.appendChild(p);
+
+// 3. Removing an element from the page:
+
+// Get the element with the "myDiv" id
+var div = document.getElementById("myDiv");
+// Remove the element from the page
+div.parentNode.removeChild(div);
+
+// 4. Modifying an element's style:
+
+// Get the element with the "myDiv" id
+var div = document.getElementById("myDiv");
+// Change the background color of the element
+div.style.backgroundColor = "red";
+
+// 5. Setting an element's attribute:
+
+// Get the element with the "myImage" id
+var img = document.getElementById("myImage");
+// Set the "src" attribute of the element
+img.setAttribute("src", "new-image.jpg");
+
+
+
+//Need to be execute in a browser 
