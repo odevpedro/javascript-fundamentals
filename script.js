@@ -60,7 +60,7 @@ console.log(person.address.street); // '123 Main St'
 console.log(person.address.city); // 'New York'
 console.log(person.address.state); // 'NY'
 
-// Methods
+// Methods:
 
 // An object can have methods, which are functions that can perform actions or calculations
 
