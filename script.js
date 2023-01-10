@@ -1,40 +1,37 @@
-// 1. Changing the contents of an element:
+// Concatenation example
+let firstName = "John";
+let lastName = "Doe";
+let fullName = firstName + " " + lastName;
+console.log(fullName);  // Output: "John Doe"
 
-// Get the element with the "myDiv" id
-var div = document.getElementById("myDiv");
-// Change the contents of the element
-div.innerHTML = "Hello, World!";
+// Substring extraction example
+let str = "JavaScript";
+let sub = str.substring(4, 10);
+console.log(sub);  // Output: "Script"
 
-// 2. Adding a new element to the page:
+// Replacing a substring example
+let sentence = "I love JavaScript";
+let newSentence = sentence.replace("JavaScript", "programming");
+console.log(newSentence);  // Output: "I love programming"
 
-// Create a new paragraph element
-var p = document.createElement("p");
-// Set the inner HTML of the element
-p.innerHTML = "This is a new paragraph.";
-// Append the element to the body of the page
-document.body.appendChild(p);
+// Changing the case of a string example
+let str1 = "JavaScript";
+let upperCase = str1.toUpperCase();
+let lowerCase = str1.toLowerCase();
+console.log(upperCase); // Output: "JAVASCRIPT"
+console.log(lowerCase); // Output: "javascript"
 
-// 3. Removing an element from the page:
+// Splitting a string example
+let str2 = "JavaScript,Python,Java,C++";
+let arr = str2.split(",");
+console.log(arr);  // Output: ["JavaScript", "Python", "Java", "C++"]
 
-// Get the element with the "myDiv" id
-var div = document.getElementById("myDiv");
-// Remove the element from the page
-div.parentNode.removeChild(div);
+// check the presence of a substring example
+let str3 = "Hello, welcome to JavaScript";
+let check = str3.includes("JavaScript");
+console.log(check);  // Output: true
 
-// 4. Modifying an element's style:
-
-// Get the element with the "myDiv" id
-var div = document.getElementById("myDiv");
-// Change the background color of the element
-div.style.backgroundColor = "red";
-
-// 5. Setting an element's attribute:
-
-// Get the element with the "myImage" id
-var img = document.getElementById("myImage");
-// Set the "src" attribute of the element
-img.setAttribute("src", "new-image.jpg");
-
-
-
-//Need to be execute in a browser 
+// Trimming whitespaces example
+let str4 = "    Hello, welcome to JavaScript    ";
+let newStr = str4.trim();
+console.log(newStr);  // Output: "Hello, welcome to JavaScript"
